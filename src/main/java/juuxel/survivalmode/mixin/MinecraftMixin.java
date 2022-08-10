@@ -9,7 +9,7 @@ package juuxel.survivalmode.mixin;
 import com.mojang.minecraft.Minecraft;
 import com.mojang.minecraft.MinecraftApplet;
 import com.mojang.minecraft.gamemode.GameMode;
-import com.mojang.minecraft.gamemode.SurvivalMode;
+import juuxel.survivalmode.GameModes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,10 +24,6 @@ abstract class MinecraftMixin {
 
     @Inject(method = "<init>", at = @At("RETURN"))
     private void onConstruct(Canvas applet, MinecraftApplet width, int height, int fullscreen, boolean par5, CallbackInfo info) {
-        try {
-            gameMode = SurvivalMode.class.getConstructor(Minecraft.class).newInstance(this);
-        } catch (ReflectiveOperationException e) {
-            throw new RuntimeException(e);
-        }
+        gameMode = GameModes.survival((Minecraft) (Object) this);
     }
 }
