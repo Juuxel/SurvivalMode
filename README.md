@@ -1,9 +1,8 @@
-# Fabric Example Mod
+# Survival Mode
 
-## Setup
+Minecraft Classic had [a test for the survival game mode](https://minecraft.fandom.com/wiki/Java_Edition_Survival_Test)
+available between versions 0.24 and 0.27. While the later Classic versions were creative-only,
+code for the survival mode still remained in the game internally.
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+**Survival Mode** re-enables survival mode on 0.30 using the game's "hidden" implementation.
+The mod is released as a jar built against obfuscated names for 0.30, so it won't work for other creative versions after 0.27.
